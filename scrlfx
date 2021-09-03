@@ -1,0 +1,15 @@
+#! /bin/bash
+
+# Scroll down a Firefox window. If arg is -1, scroll it up.
+
+var=$@
+key="Next"
+
+if [[ $var == -1 ]]
+then
+   key="Prior"
+fi
+
+xdotool search --class Firefox windowactivate \
+        --sync %1 key $key windowactivate \
+        $(xdotool getactivewindow)
