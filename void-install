@@ -93,7 +93,7 @@ sudo xbps-install -Sy \
 mkdir -p ~/source && cd ~/source
 git clone https://github.com/jsbmg/snafu
 cd ~/source/snafu && cargo install --path . # for status line
-cd ..
+cd ~/source
 git clone https://github.com/jsbmg/dwm
 cd ~/source/dwm && sudo make clean install
 cd $HOME
@@ -121,7 +121,7 @@ sudo xbps-install -Sy \ # install build dependencies
 	     
 cd ~/source
 git clone https://git.savannah.gnu.org/git/emacs.git
-cd emacs
+cd ~/source/emacs
 ./autogen.sh
 ./configure --with-native-compilation --with-mailutils
 make
