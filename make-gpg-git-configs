@@ -1,6 +1,7 @@
 #! /bin/env bash
 
 # make gpg and git configs
+gpg2 -k # this should initialize the .gnupg folder?
 
 read -r -d '' gpg_config << EOM
 default-cache-ttl 86400
