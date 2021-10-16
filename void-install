@@ -68,10 +68,10 @@ sudo xbps-install -Sy \
 # preliminarily setup gpg2 and git
 ./make-gpg-git-configs
 		  
-# enable system services. Elogind and dbus handles the XDG_RUNTIME_DIR
-# variable, which is a headache to deal with otherwise. acpid is
-# disabled so that it doesn't conflict with elogind. Tlp helps with
-# battery life on laptops.
+# enable system services. Elogind/dbus handle the XDG_RUNTIME_DIR
+# variable, which is a pain to deal with otherwise. acpid is disabled so
+# that it doesn't conflict with elogind. Tlp for battery life on
+# laptops.
 sudo rm -rf /var/service/acpid
 sudo ln -s /etc/sv/dbus /var/service
 sudo ln -s /etc/sv/elogind /var/service
