@@ -23,7 +23,6 @@ fi
 sudo xbps-install -Suv # get updates
 sudo xbps-install -Sy \ 
                   acpi \
-                  alsa-utils \
                   base-devel \
                   brillo \
                   cmake \                                       
