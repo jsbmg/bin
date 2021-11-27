@@ -1,0 +1,9 @@
+#! /bin/sh
+
+if [ -d "$HOME/.dotfiles" ]; then
+    git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME pull
+else
+    git clone --bare git@github.com:jsbmg/dotfiles ~/.dotfiles
+fi
+
+/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME checkout --force

@@ -1,0 +1,27 @@
+#! /bin/sh -e
+#
+# Move the active window to [left|right] of screen
+# Usage: $ winmove left|right
+
+dims=$(xdpyinfo | awk '/dimensions/ { print $2}' | sed 's/x/ /') 
+width=$(echo "$dims" | awk '{print $1}')
+height=$(echo "$dims" | awk '{print $2}')
+width_halved="$(($width / 2))"
+
+win=$(xdotool getactivewindow)
+
+xdotool windowsize $win $width_halved $height
+
+if [ -z "$1" ]
+then 
+    printf "Usage: winmove left|right\n"
+    return 
+elif [ "$1" = "right" ]
+then 
+    xdotool windowmove $win $width_halved 0 
+elif [ "$1" = "left" ]
+then 
+    xdotool windowmove $win 0 0  
+else
+    printf "Invalid argument."
+fi
