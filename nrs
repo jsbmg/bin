@@ -1,0 +1,9 @@
+#!/usr/bin/perl -pi
+# 
+# credit to:
+# https://unix.stackexchange.com/a/184281
+# removes redudant whitespace in-place
+
+s/\h*(\r\n|\n|\r)/\n/g;                 ## normalize \n (DOS, MAC)
+s/^(\xFF\xFE|\xFE\xFF|\xEF\xBB\xBF)//;  ## remove BOM !
+
