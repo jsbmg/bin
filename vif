@@ -1,0 +1,4 @@
+#! /bin/sh 
+
+fname=$(fzf) || return
+vi "$fname"
