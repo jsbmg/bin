@@ -1,0 +1,7 @@
+#! /bin/sh
+
+export GIT_WORK_TREE=~
+export GIT_DIR=~/.dotfiles
+
+file=$(git ls-tree -r master --name-only | fzf) || return
+vi $file
